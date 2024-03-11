@@ -22,6 +22,7 @@ public class ExpositionController {
 
         Exposition theExposition = expositionService.findById(expositionId);
 
+        // lança uma exceção se o valor retornado for null
         if (theExposition== null) {
             throw new RuntimeException("Exposition id not found - " + expositionId);
         }

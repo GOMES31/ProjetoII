@@ -34,7 +34,7 @@ public class ClientServiceImpl implements ClientService {
             theClient = result.get();
         }
         else {
-            // we didn't find the client
+            // não encontramos o cliente
             throw new RuntimeException("Did not find client id - " + theId);
         }
 

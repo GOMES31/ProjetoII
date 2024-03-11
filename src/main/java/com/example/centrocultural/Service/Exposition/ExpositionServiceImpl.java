@@ -34,7 +34,7 @@ public class ExpositionServiceImpl implements ExpositionService {
             theExposition = result.get();
         }
         else {
-            // we didn't find the client
+            // não encontramos a exposição
             throw new RuntimeException("Did not find exposition id - " + theId);
         }
 

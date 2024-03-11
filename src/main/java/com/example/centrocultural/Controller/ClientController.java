@@ -29,6 +29,7 @@ public class ClientController {
 
         Client theClient = clientService.findById(clientId);
 
+        // lança uma exceção se o valor retornado for null
         if (theClient == null) {
             throw new RuntimeException("Client id not found - " + clientId);
         }
