@@ -27,16 +27,20 @@ public class Exposition {
     @Column(name = "place")
     private String expPlace;
 
+    @Column(name = "theme")
+    private String theme;
+
+
     @ManyToOne
     @JoinColumn(name = "client_id",nullable = false)
-    private Client client;
+    private Client expositor;
 
-    // Cria uma tabela chamada "timetables" que conecta as tabelas "visits" e "expositions"
+    // Cria uma tabela chamada "visits" que associa os clientes que participaram na exposicao à exposicao
     @ManyToMany
     @JoinTable(
-            name = "timetables",
+            name = "visits",
             joinColumns = @JoinColumn(name = "exposition_id"),
-            inverseJoinColumns = @JoinColumn(name = "visit_id")
+            inverseJoinColumns = @JoinColumn(name = "client_id")
     )
-    private Set<Visit> visits;
+    private Set<Client> participants;
 }

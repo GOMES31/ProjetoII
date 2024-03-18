@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "clients")
@@ -18,23 +19,15 @@ public class Client{
     @Column(name = "name")
     private String name;
 
-    @Column(name = "email")
-    private String email;
-
-    @Column(name = "password")
-    private String password;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
+    private Set<Exposition> expositions;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
-    private List<Exposition> expositions;
+    private Set<Invoice> invoices;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
-    private List<Visit> visits;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
-    private List<Invoice> invoices;
-
-
-
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "client_id", referencedColumnName = "id")
+    private User user;
 
 
 }
