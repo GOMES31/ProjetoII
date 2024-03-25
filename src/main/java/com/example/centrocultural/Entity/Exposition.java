@@ -33,7 +33,7 @@ public class Exposition {
 
     @ManyToOne
     @JoinColumn(name = "client_id",nullable = false)
-    private Client expositor;
+    private Client client;
 
     // Cria uma tabela chamada "visits" que associa os clientes que participaram na exposicao à exposicao
     @ManyToMany

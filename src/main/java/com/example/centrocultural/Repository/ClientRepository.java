@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-//@CrossOrigin("http://localhost:8080/api/clients")
 public interface ClientRepository extends JpaRepository <Client, Integer>{
 
     // Não é necessário código nenhum apenas só se for uma query especifica

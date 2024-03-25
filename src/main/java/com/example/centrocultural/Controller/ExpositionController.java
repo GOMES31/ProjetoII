@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/expositions")
+@RequestMapping("/api")
 public class ExpositionController {
 
     private final ExpositionService expositionService;

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/invoices")
+@RequestMapping("/api")
 public class InvoiceController {
 
     private final InvoiceService invoiceService;
